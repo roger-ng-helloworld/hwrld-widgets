@@ -1,0 +1,41 @@
+@import 'variables';
+
+.hwrld-widget {
+	.list {
+		border-top: 1px dotted $color-text;
+		max-width: $break-large; 
+	}
+
+	.list-item {
+		border-bottom: 1px dotted $color-text; 
+		padding: 20px 0;
+		position: relative;
+
+	}
+
+	.cta {
+		background-color: rgba(0,0,0,0.2);
+		display: none;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 100;
+	}
+
+	.img-container {
+		height: 90px;
+		overflow: hidden;
+	}
+
+	.title {
+		color: $color-primary;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.blurb {
+		height: 32px;
+		margin-top: 5px;
+		overflow: hidden;
+	}
+}

@@ -36,6 +36,11 @@ module.exports = {
 				test: /\.(es6|js)$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.scss/,
+				exclude: /node_modules/,
+				loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext', 'sass']
 			}
 		]
 	},

@@ -19719,7 +19719,7 @@ webpackJsonp([0,1],[
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license
@@ -21122,11 +21122,11 @@ webpackJsonp([0,1],[
 
 	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
 
 	var Headers = undefined;
 	var Request = undefined;
@@ -21261,7 +21261,7 @@ webpackJsonp([0,1],[
 				(function () {
 					debug('constructing starts with string matcher for route: ' + route.name);
 					var expectedUrl = route.matcher.substr(1);
-					matchUrl = function (url) {
+					matchUrl = function matchUrl(url) {
 						return url.indexOf(expectedUrl) === 0;
 					};
 				})();
@@ -21269,7 +21269,7 @@ webpackJsonp([0,1],[
 				(function () {
 					debug('constructing string matcher for route: ' + route.name);
 					var expectedUrl = route.matcher;
-					matchUrl = function (url) {
+					matchUrl = function matchUrl(url) {
 						return url === expectedUrl;
 					};
 				})();
@@ -21278,7 +21278,7 @@ webpackJsonp([0,1],[
 			(function () {
 				debug('constructing regex matcher for route: ' + route.name);
 				var urlRX = route.matcher;
-				matchUrl = function (url) {
+				matchUrl = function matchUrl(url) {
 					return urlRX.test(url);
 				};
 			})();
@@ -21292,7 +21292,7 @@ webpackJsonp([0,1],[
 		return route;
 	}
 
-	var FetchMock = (function () {
+	var FetchMock = function () {
 		/**
 	  * constructor
 	  * Sets up scoped references to configuration passed in from client/server bootstrappers
@@ -21321,6 +21321,7 @@ webpackJsonp([0,1],[
 	  * Sets fetchMock's default internal reference to native fetch to the given function
 	  * @param  {Function} func
 	  */
+
 
 		_createClass(FetchMock, [{
 			key: 'useNonGlobalFetch',
@@ -21612,7 +21613,7 @@ webpackJsonp([0,1],[
 		}]);
 
 		return FetchMock;
-	})();
+	}();
 
 	module.exports = FetchMock;
 
@@ -21620,13 +21621,163 @@ webpackJsonp([0,1],[
 /* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.default = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _dec, _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactStyleable = __webpack_require__(167);
+
+	var _reactStyleable2 = _interopRequireDefault(_reactStyleable);
+
+	var _coreWidget = __webpack_require__(176);
+
+	var _coreWidget2 = _interopRequireDefault(_coreWidget);
+
+	var _activities = __webpack_require__(172);
+
+	var _activities2 = _interopRequireDefault(_activities);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Activities = (_dec = (0, _reactStyleable2.default)(_activities2.default), _dec(_class = function (_Component) {
+		_inherits(Activities, _Component);
+
+		function Activities() {
+			_classCallCheck(this, Activities);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Activities).apply(this, arguments));
+		}
+
+		_createClass(Activities, [{
+			key: 'render',
+			value: function render() {
+				var self = this;
+				return _react2.default.createElement(
+					'div',
+					{ className: 'hwrld-widget ' + this.props.css['hwrld-widget'] },
+					_react2.default.createElement(
+						'ul',
+						{ className: this.props.css.list + ' container-fluid' },
+						this.props.deals.items.map(function (val, ind) {
+							return _react2.default.createElement(
+								'li',
+								{ key: ind, className: self.props.css['list-item'] + ' row' },
+								_react2.default.createElement(
+									'a',
+									{ href: val.cta, className: self.props.css.cta },
+									'CTA'
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: self.props.css['img-container'] + ' col-sm-3' },
+									_react2.default.createElement('img', { src: val.img, alt: val.title })
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'col-sm-6' },
+									_react2.default.createElement(
+										'div',
+										{ className: self.props.css.title },
+										val.title
+									),
+									_react2.default.createElement(
+										'div',
+										null,
+										val.subTitle
+									),
+									_react2.default.createElement(
+										'div',
+										null,
+										val.rating
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: self.props.css.blurb },
+										val.blurb
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'col-sm-3' },
+									_react2.default.createElement(
+										'div',
+										null,
+										val.price.topAggregator
+									),
+									_react2.default.createElement(
+										'div',
+										null,
+										val.price.price
+									),
+									_react2.default.createElement(
+										'div',
+										null,
+										val.price.bottomAggregator
+									)
+								)
+							);
+						})
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						'Activities'
+					)
+				);
+			}
+		}]);
+
+		return Activities;
+	}(_react.Component)) || _class);
+	exports.default = Activities;
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(168)
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = styleable;
+
+	var _getDisplayName = __webpack_require__(169);
+
+	var _getDisplayName2 = _interopRequireDefault(_getDisplayName);
+
+	var _invariant = __webpack_require__(170);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
 
 	var _react = __webpack_require__(1);
 
@@ -21640,97 +21791,551 @@ webpackJsonp([0,1],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Activities = function (_Component) {
-		_inherits(Activities, _Component);
+	function getSelectorsNotInStylesheet(cssProps, stylesheet) {
+	  var propKeys = Object.keys(cssProps);
+	  var cssKeys = Object.keys(stylesheet);
+	  return propKeys.filter(function (prop) {
+	    return cssKeys.indexOf(prop) === -1;
+	  });
+	}
 
-		function Activities() {
-			_classCallCheck(this, Activities);
+	function isPropsAnOverride(cssProps, stylesheet) {
+	  return getSelectorsNotInStylesheet(cssProps, stylesheet).length <= 0;
+	}
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Activities).apply(this, arguments));
+	function hasDefinedStyles(stylesheet) {
+	  return stylesheet && Object.keys(stylesheet).length > 0;
+	}
+
+	function stylesAreOverrides(cssProps, stylesheet) {
+	  return hasDefinedStyles(stylesheet) ? isPropsAnOverride(cssProps, stylesheet) : true;
+	}
+
+	function isClass(Comp) {
+	  // :( try/catch flow control -- want something better
+	  try {
+	    Comp();
+	  } catch (e) {
+	    return e && e.message && /Cannot call a class as a function/.test(e.message);
+	  }
+	  return false;
+	}
+
+	function styleable(stylesheet) {
+	  if (!stylesheet) stylesheet = {};
+
+	  if ((typeof stylesheet === 'undefined' ? 'undefined' : _typeof(stylesheet)) !== 'object' || Array.isArray(stylesheet)) throw new Error('stylesheet must be an object (eg, export object from a css module)');
+
+	  return function decorateSource(DecoratedComponent) {
+	    var _class, _temp;
+
+	    if (!isClass(DecoratedComponent)) return function styledFn(props) {
+	      return DecoratedComponent(_extends({}, DecoratedComponent.defaultProps, props, {
+	        css: _extends({}, stylesheet, props.css)
+	      }));
+	    };else return _temp = _class = function (_React$Component) {
+	      _inherits(Styleable, _React$Component);
+
+	      function Styleable() {
+	        _classCallCheck(this, Styleable);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Styleable).apply(this, arguments));
+	      }
+
+	      _createClass(Styleable, [{
+	        key: 'getCss',
+	        value: function getCss() {
+	          (0, _invariant2.default)(stylesAreOverrides(this.props.css, stylesheet), 'Expected "this.props.css" to provide only overrides to the given stylesheet.  Selectors "%s" not included in the stylesheet keys, "%s".', getSelectorsNotInStylesheet(this.props.css, stylesheet), Object.keys(stylesheet));
+	          return _extends({}, stylesheet, this.props.css);
+	        }
+	      }, {
+	        key: 'render',
+	        value: function render() {
+	          return _react2.default.createElement(DecoratedComponent, _extends({ ref: 'wrapped' }, this.props, { css: this.getCss() }));
+	        }
+	      }]);
+
+	      return Styleable;
+	    }(_react2.default.Component), _class.displayName = 'Styleable(' + (0, _getDisplayName2.default)(DecoratedComponent) + ')', _class.defaultProps = _extends({}, DecoratedComponent.defaultProps, {
+	      css: {}
+	    }), _class.propTypes = {
+	      css: _react2.default.PropTypes.object
+	    }, _temp;
+	  };
+	}
+	//# sourceMappingURL=styleable.js.map
+
+/***/ },
+/* 169 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = getDisplayName;
+	function getDisplayName(Component) {
+	  return Component.displayName || Component.name || 'Component';
+	}
+	//# sourceMappingURL=get-display-name.js.map
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	'use strict';
+
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+
+	var invariant = function(condition, format, a, b, c, d, e, f) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error(
+	        'Minified exception occurred; use the non-minified dev environment ' +
+	        'for the full error message and additional helpful warnings.'
+	      );
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error(
+	        format.replace(/%s/g, function() { return args[argIndex++]; })
+	      );
+	      error.name = 'Invariant Violation';
+	    }
+
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+
+	module.exports = invariant;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 171 */,
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(173);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(175)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./activities.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./activities.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(174)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".hwrld-widget---38y5N .list---2XMRf {\n  border-top: 1px dotted #757575;\n  max-width: 978px; }\n\n.hwrld-widget---38y5N .list-item---1wafT {\n  border-bottom: 1px dotted #757575;\n  padding: 20px 0;\n  position: relative; }\n\n.hwrld-widget---38y5N .cta---2Yd0p {\n  background-color: #000000;\n  background-color: rgba(0, 0, 0, 0.2);\n  display: none;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 100; }\n\n.hwrld-widget---38y5N .img-container---1eUHd {\n  height: 90px;\n  overflow: hidden; }\n\n.hwrld-widget---38y5N .title---2lov8 {\n  color: #00BCE4;\n  font-size: 18px;\n  font-weight: bold; }\n\n.hwrld-widget---38y5N .blurb---OABiU {\n  height: 32px;\n  margin-top: 5px;\n  overflow: hidden; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"hwrld-widget": "hwrld-widget---38y5N",
+		"list": "list---2XMRf",
+		"list-item": "list-item---1wafT",
+		"cta": "cta---2Yd0p",
+		"img-container": "img-container---1eUHd",
+		"title": "title---2lov8",
+		"blurb": "blurb---OABiU"
+	};
+
+/***/ },
+/* 174 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
 
-		_createClass(Activities, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "hwrld-widget" },
-					_react2.default.createElement(
-						"ul",
-						null,
-						this.props.deals.items.map(function (val, ind) {
-							return _react2.default.createElement(
-								"li",
-								{ key: ind },
-								_react2.default.createElement(
-									"a",
-									{ href: val.cta },
-									"CTA"
-								),
-								_react2.default.createElement(
-									"div",
-									null,
-									_react2.default.createElement("img", { src: val.img, alt: val.title })
-								),
-								_react2.default.createElement(
-									"div",
-									null,
-									_react2.default.createElement(
-										"div",
-										null,
-										val.title
-									),
-									_react2.default.createElement(
-										"div",
-										null,
-										val.subTitle
-									),
-									_react2.default.createElement(
-										"div",
-										null,
-										val.rating
-									),
-									_react2.default.createElement(
-										"div",
-										null,
-										val.blurb
-									)
-								),
-								_react2.default.createElement(
-									"div",
-									null,
-									_react2.default.createElement(
-										"div",
-										null,
-										val.price.topAggregator
-									),
-									_react2.default.createElement(
-										"div",
-										null,
-										val.price.price
-									),
-									_react2.default.createElement(
-										"div",
-										null,
-										val.price.bottomAggregator
-									)
-								)
-							);
-						})
-					),
-					_react2.default.createElement(
-						"div",
-						null,
-						"Activities"
-					)
-				);
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
 			}
-		}]);
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
 
-		return Activities;
-	}(_react.Component);
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
 
-	exports.default = Activities;
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(177);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(175)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./core-widget.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./core-widget.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(174)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* normalise */\n.hwrld-widget article,\n.hwrld-widget aside,\n.hwrld-widget details,\n.hwrld-widget figcaption,\n.hwrld-widget figure,\n.hwrld-widget footer,\n.hwrld-widget header,\n.hwrld-widget main,\n.hwrld-widget menu,\n.hwrld-widget nav,\n.hwrld-widget section,\n.hwrld-widget summary {\n  display: block; }\n\n.hwrld-widget audio,\n.hwrld-widget canvas,\n.hwrld-widget progress,\n.hwrld-widget video {\n  display: inline-block;\n  vertical-align: baseline; }\n\n.hwrld-widget audio:not([controls]) {\n  display: none;\n  height: 0; }\n\n.hwrld-widget [hidden],\n.hwrld-widget template {\n  display: none; }\n\n.hwrld-widget a {\n  background-color: transparent; }\n\n.hwrld-widget a:active,\n.hwrld-widget a:hover {\n  outline: 0; }\n\n.hwrld-widget abbr[title] {\n  border-bottom: none;\n  text-decoration: underline;\n  text-decoration: underline dotted; }\n\n.hwrld-widget b,\n.hwrld-widget strong {\n  font-weight: inherit; }\n\n.hwrld-widget b,\n.hwrld-widget strong {\n  font-weight: bolder; }\n\n.hwrld-widget dfn {\n  font-style: italic; }\n\n.hwrld-widget h1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n.hwrld-widget mark {\n  background-color: #ff0;\n  color: #000; }\n\n.hwrld-widget small {\n  font-size: 80%; }\n\n.hwrld-widget sub,\n.hwrld-widget sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\n.hwrld-widget sup {\n  top: -0.5em; }\n\n.hwrld-widget sub {\n  bottom: -0.25em; }\n\n.hwrld-widget img {\n  border: 0; }\n\n.hwrld-widget svg:not(:root) {\n  overflow: hidden; }\n\n.hwrld-widget figure {\n  margin: 1em 40px; }\n\n.hwrld-widget hr {\n  box-sizing: content-box;\n  height: 0;\n  overflow: visible; }\n\n.hwrld-widget pre {\n  overflow: auto; }\n\n.hwrld-widget code,\n.hwrld-widget kbd,\n.hwrld-widget pre,\n.hwrld-widget samp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n.hwrld-widget button,\n.hwrld-widget input,\n.hwrld-widget optgroup,\n.hwrld-widget select,\n.hwrld-widget textarea {\n  font: inherit;\n  margin: 0; }\n\n.hwrld-widget button {\n  overflow: visible; }\n\n.hwrld-widget button,\n.hwrld-widget select {\n  text-transform: none; }\n\n.hwrld-widget button,\n.hwrld-widget input[type=\"reset\"],\n.hwrld-widget input[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer; }\n\n.hwrld-widget button[disabled] {\n  cursor: default; }\n\n.hwrld-widget button::-moz-focus-inner,\n.hwrld-widget input::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n.hwrld-widget button:-moz-focusring,\n.hwrld-widget input:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n.hwrld-widget input {\n  line-height: normal; }\n\n.hwrld-widget input[type=\"checkbox\"],\n.hwrld-widget input[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0; }\n\n.hwrld-widget input[type=\"number\"]::-webkit-inner-spin-button,\n.hwrld-widget input[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n.hwrld-widget input[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n.hwrld-widget input[type=\"search\"]::-webkit-search-cancel-button,\n.hwrld-widget input[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n.hwrld-widget fieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n.hwrld-widget legend {\n  border: 0;\n  padding: 0; }\n\n.hwrld-widget textarea {\n  overflow: auto; }\n\n.hwrld-widget optgroup {\n  font-weight: bold; }\n\n.hwrld-widget div, .hwrld-widget span, .hwrld-widget applet, .hwrld-widget object, .hwrld-widget iframe, .hwrld-widget h1, .hwrld-widget h2, .hwrld-widget h3, .hwrld-widget h4, .hwrld-widget h5, .hwrld-widget h6, .hwrld-widget p, .hwrld-widget blockquote, .hwrld-widget pre, .hwrld-widget a, .hwrld-widget abbr, .hwrld-widget acronym, .hwrld-widget address, .hwrld-widget big, .hwrld-widget cite, .hwrld-widget code, .hwrld-widget del, .hwrld-widget dfn, .hwrld-widget em, .hwrld-widget img, .hwrld-widget ins, .hwrld-widget kbd, .hwrld-widget q, .hwrld-widget s, .hwrld-widget samp, .hwrld-widget small, .hwrld-widget strike, .hwrld-widget strong, .hwrld-widget sub, .hwrld-widget sup, .hwrld-widget tt, .hwrld-widget var, .hwrld-widget b, .hwrld-widget u, .hwrld-widget i, .hwrld-widget center, .hwrld-widget dl, .hwrld-widget dt, .hwrld-widget dd, .hwrld-widget ol, .hwrld-widget ul, .hwrld-widget li, .hwrld-widget fieldset, .hwrld-widget form, .hwrld-widget label, .hwrld-widget legend, .hwrld-widget table, .hwrld-widget caption, .hwrld-widget tbody, .hwrld-widget tfoot, .hwrld-widget thead, .hwrld-widget tr, .hwrld-widget th, .hwrld-widget td, .hwrld-widget article, .hwrld-widget aside, .hwrld-widget canvas, .hwrld-widget details, .hwrld-widget embed, .hwrld-widget figure, .hwrld-widget figcaption, .hwrld-widget footer, .hwrld-widget header, .hwrld-widget hgroup, .hwrld-widget menu, .hwrld-widget nav, .hwrld-widget output, .hwrld-widget ruby, .hwrld-widget section, .hwrld-widget summary, .hwrld-widget time, .hwrld-widget mark, .hwrld-widget audio, .hwrld-widget video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n.hwrld-widget article, .hwrld-widget aside, .hwrld-widget details, .hwrld-widget figcaption, .hwrld-widget figure, .hwrld-widget footer, .hwrld-widget header, .hwrld-widget hgroup, .hwrld-widget menu, .hwrld-widget nav, .hwrld-widget section {\n  display: block; }\n\n.hwrld-widget ol, .hwrld-widget ul {\n  list-style: none; }\n\n.hwrld-widget blockquote, .hwrld-widget q {\n  quotes: none; }\n\n.hwrld-widget blockquote:before, .hwrld-widget blockquote:after, .hwrld-widget q:before, .hwrld-widget q:after {\n  content: '';\n  content: none; }\n\n.hwrld-widget table {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n.hwrld-widget article,\n.hwrld-widget aside,\n.hwrld-widget details,\n.hwrld-widget figcaption,\n.hwrld-widget figure,\n.hwrld-widget footer,\n.hwrld-widget header,\n.hwrld-widget hgroup,\n.hwrld-widget main,\n.hwrld-widget menu,\n.hwrld-widget nav,\n.hwrld-widget section,\n.hwrld-widget summary {\n  display: block; }\n\n.hwrld-widget audio,\n.hwrld-widget canvas,\n.hwrld-widget progress,\n.hwrld-widget video {\n  display: inline-block;\n  vertical-align: baseline; }\n\n.hwrld-widget audio:not([controls]) {\n  display: none;\n  height: 0; }\n\n.hwrld-widget [hidden],\n.hwrld-widget template {\n  display: none; }\n\n.hwrld-widget a {\n  background-color: transparent; }\n\n.hwrld-widget a:active,\n.hwrld-widget a:hover {\n  outline: 0; }\n\n.hwrld-widget abbr[title] {\n  border-bottom: 1px dotted; }\n\n.hwrld-widget b,\n.hwrld-widget strong {\n  font-weight: bold; }\n\n.hwrld-widget dfn {\n  font-style: italic; }\n\n.hwrld-widget h1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n.hwrld-widget mark {\n  background: #ff0;\n  color: #000; }\n\n.hwrld-widget small {\n  font-size: 80%; }\n\n.hwrld-widget sub,\n.hwrld-widget sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\n.hwrld-widget sup {\n  top: -0.5em; }\n\n.hwrld-widget sub {\n  bottom: -0.25em; }\n\n.hwrld-widget img {\n  border: 0; }\n\n.hwrld-widget svg:not(:root) {\n  overflow: hidden; }\n\n.hwrld-widget figure {\n  margin: 1em 40px; }\n\n.hwrld-widget hr {\n  box-sizing: content-box;\n  height: 0; }\n\n.hwrld-widget pre {\n  overflow: auto; }\n\n.hwrld-widget code,\n.hwrld-widget kbd,\n.hwrld-widget pre,\n.hwrld-widget samp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n.hwrld-widget button,\n.hwrld-widget input,\n.hwrld-widget optgroup,\n.hwrld-widget select,\n.hwrld-widget textarea {\n  color: inherit;\n  font: inherit;\n  margin: 0; }\n\n.hwrld-widget button {\n  overflow: visible; }\n\n.hwrld-widget button,\n.hwrld-widget select {\n  text-transform: none; }\n\n.hwrld-widget button,\n.hwrld-widget input[type=\"reset\"],\n.hwrld-widget input[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer; }\n\n.hwrld-widget button[disabled] {\n  cursor: default; }\n\n.hwrld-widget button::-moz-focus-inner,\n.hwrld-widget input::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n.hwrld-widget input {\n  line-height: normal; }\n\n.hwrld-widget input[type=\"checkbox\"],\n.hwrld-widget input[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0; }\n\n.hwrld-widget input[type=\"number\"]::-webkit-inner-spin-button,\n.hwrld-widget input[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n.hwrld-widget input[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box; }\n\n.hwrld-widget input[type=\"search\"]::-webkit-search-cancel-button,\n.hwrld-widget input[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n.hwrld-widget fieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n.hwrld-widget legend {\n  border: 0;\n  padding: 0; }\n\n.hwrld-widget textarea {\n  overflow: auto; }\n\n.hwrld-widget optgroup {\n  font-weight: bold; }\n\n.hwrld-widget table {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n.hwrld-widget td,\n.hwrld-widget th {\n  padding: 0; }\n\n.hwrld-widget * {\n  box-sizing: border-box; }\n\n.hwrld-widget *:before,\n.hwrld-widget *:after {\n  box-sizing: border-box; }\n\n.hwrld-widget input,\n.hwrld-widget button,\n.hwrld-widget select,\n.hwrld-widget textarea {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit; }\n\n.hwrld-widget a {\n  color: #337ab7;\n  text-decoration: none; }\n\n.hwrld-widget a:hover,\n.hwrld-widget a:focus {\n  color: #23527c;\n  text-decoration: underline; }\n\n.hwrld-widget a:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px; }\n\n.hwrld-widget figure {\n  margin: 0; }\n\n.hwrld-widget img {\n  vertical-align: middle; }\n\n.hwrld-widget .img-responsive {\n  display: block;\n  max-width: 100%;\n  height: auto; }\n\n.hwrld-widget .img-rounded {\n  border-radius: 6px; }\n\n.hwrld-widget .img-thumbnail {\n  padding: 4px;\n  line-height: 1.42857143;\n  background-color: #ffffff;\n  border: 1px solid #dddddd;\n  border-radius: 4px;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  display: inline-block;\n  max-width: 100%;\n  height: auto; }\n\n.hwrld-widget .img-circle {\n  border-radius: 50%; }\n\n.hwrld-widget hr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eeeeee; }\n\n.hwrld-widget .sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0; }\n\n.hwrld-widget .sr-only-focusable:active,\n.hwrld-widget .sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto; }\n\n.hwrld-widget [role=\"button\"] {\n  cursor: pointer; }\n\n.hwrld-widget .container {\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 10px;\n  padding-right: 10px; }\n\n@media (min-width: 670px) {\n  .hwrld-widget .container {\n    width: 740px; } }\n\n@media (min-width: 786px) {\n  .hwrld-widget .container {\n    width: 960px; } }\n\n@media (min-width: 978px) {\n  .hwrld-widget .container {\n    width: 1160px; } }\n\n.hwrld-widget .container-fluid {\n  padding-left: 10px;\n  padding-right: 10px; }\n\n.hwrld-widget .row {\n  margin-left: -10px;\n  margin-right: -10px; }\n\n.hwrld-widget .col-xs-1, .hwrld-widget .col-sm-1, .hwrld-widget .col-md-1, .hwrld-widget .col-lg-1, .hwrld-widget .col-xs-2, .hwrld-widget .col-sm-2, .hwrld-widget .col-md-2, .hwrld-widget .col-lg-2, .hwrld-widget .col-xs-3, .hwrld-widget .col-sm-3, .hwrld-widget .col-md-3, .hwrld-widget .col-lg-3, .hwrld-widget .col-xs-4, .hwrld-widget .col-sm-4, .hwrld-widget .col-md-4, .hwrld-widget .col-lg-4, .hwrld-widget .col-xs-5, .hwrld-widget .col-sm-5, .hwrld-widget .col-md-5, .hwrld-widget .col-lg-5, .hwrld-widget .col-xs-6, .hwrld-widget .col-sm-6, .hwrld-widget .col-md-6, .hwrld-widget .col-lg-6, .hwrld-widget .col-xs-7, .hwrld-widget .col-sm-7, .hwrld-widget .col-md-7, .hwrld-widget .col-lg-7, .hwrld-widget .col-xs-8, .hwrld-widget .col-sm-8, .hwrld-widget .col-md-8, .hwrld-widget .col-lg-8, .hwrld-widget .col-xs-9, .hwrld-widget .col-sm-9, .hwrld-widget .col-md-9, .hwrld-widget .col-lg-9, .hwrld-widget .col-xs-10, .hwrld-widget .col-sm-10, .hwrld-widget .col-md-10, .hwrld-widget .col-lg-10, .hwrld-widget .col-xs-11, .hwrld-widget .col-sm-11, .hwrld-widget .col-md-11, .hwrld-widget .col-lg-11, .hwrld-widget .col-xs-12, .hwrld-widget .col-sm-12, .hwrld-widget .col-md-12, .hwrld-widget .col-lg-12 {\n  position: relative;\n  min-height: 1px;\n  padding-left: 10px;\n  padding-right: 10px; }\n\n.hwrld-widget .col-xs-1, .hwrld-widget .col-xs-2, .hwrld-widget .col-xs-3, .hwrld-widget .col-xs-4, .hwrld-widget .col-xs-5, .hwrld-widget .col-xs-6, .hwrld-widget .col-xs-7, .hwrld-widget .col-xs-8, .hwrld-widget .col-xs-9, .hwrld-widget .col-xs-10, .hwrld-widget .col-xs-11, .hwrld-widget .col-xs-12 {\n  float: left; }\n\n.hwrld-widget .col-xs-12 {\n  width: 100%; }\n\n.hwrld-widget .col-xs-11 {\n  width: 91.66666667%; }\n\n.hwrld-widget .col-xs-10 {\n  width: 83.33333333%; }\n\n.hwrld-widget .col-xs-9 {\n  width: 75%; }\n\n.hwrld-widget .col-xs-8 {\n  width: 66.66666667%; }\n\n.hwrld-widget .col-xs-7 {\n  width: 58.33333333%; }\n\n.hwrld-widget .col-xs-6 {\n  width: 50%; }\n\n.hwrld-widget .col-xs-5 {\n  width: 41.66666667%; }\n\n.hwrld-widget .col-xs-4 {\n  width: 33.33333333%; }\n\n.hwrld-widget .col-xs-3 {\n  width: 25%; }\n\n.hwrld-widget .col-xs-2 {\n  width: 16.66666667%; }\n\n.hwrld-widget .col-xs-1 {\n  width: 8.33333333%; }\n\n.hwrld-widget .col-xs-pull-12 {\n  right: 100%; }\n\n.hwrld-widget .col-xs-pull-11 {\n  right: 91.66666667%; }\n\n.hwrld-widget .col-xs-pull-10 {\n  right: 83.33333333%; }\n\n.hwrld-widget .col-xs-pull-9 {\n  right: 75%; }\n\n.hwrld-widget .col-xs-pull-8 {\n  right: 66.66666667%; }\n\n.hwrld-widget .col-xs-pull-7 {\n  right: 58.33333333%; }\n\n.hwrld-widget .col-xs-pull-6 {\n  right: 50%; }\n\n.hwrld-widget .col-xs-pull-5 {\n  right: 41.66666667%; }\n\n.hwrld-widget .col-xs-pull-4 {\n  right: 33.33333333%; }\n\n.hwrld-widget .col-xs-pull-3 {\n  right: 25%; }\n\n.hwrld-widget .col-xs-pull-2 {\n  right: 16.66666667%; }\n\n.hwrld-widget .col-xs-pull-1 {\n  right: 8.33333333%; }\n\n.hwrld-widget .col-xs-pull-0 {\n  right: auto; }\n\n.hwrld-widget .col-xs-push-12 {\n  left: 100%; }\n\n.hwrld-widget .col-xs-push-11 {\n  left: 91.66666667%; }\n\n.hwrld-widget .col-xs-push-10 {\n  left: 83.33333333%; }\n\n.hwrld-widget .col-xs-push-9 {\n  left: 75%; }\n\n.hwrld-widget .col-xs-push-8 {\n  left: 66.66666667%; }\n\n.hwrld-widget .col-xs-push-7 {\n  left: 58.33333333%; }\n\n.hwrld-widget .col-xs-push-6 {\n  left: 50%; }\n\n.hwrld-widget .col-xs-push-5 {\n  left: 41.66666667%; }\n\n.hwrld-widget .col-xs-push-4 {\n  left: 33.33333333%; }\n\n.hwrld-widget .col-xs-push-3 {\n  left: 25%; }\n\n.hwrld-widget .col-xs-push-2 {\n  left: 16.66666667%; }\n\n.hwrld-widget .col-xs-push-1 {\n  left: 8.33333333%; }\n\n.hwrld-widget .col-xs-push-0 {\n  left: auto; }\n\n.hwrld-widget .col-xs-offset-12 {\n  margin-left: 100%; }\n\n.hwrld-widget .col-xs-offset-11 {\n  margin-left: 91.66666667%; }\n\n.hwrld-widget .col-xs-offset-10 {\n  margin-left: 83.33333333%; }\n\n.hwrld-widget .col-xs-offset-9 {\n  margin-left: 75%; }\n\n.hwrld-widget .col-xs-offset-8 {\n  margin-left: 66.66666667%; }\n\n.hwrld-widget .col-xs-offset-7 {\n  margin-left: 58.33333333%; }\n\n.hwrld-widget .col-xs-offset-6 {\n  margin-left: 50%; }\n\n.hwrld-widget .col-xs-offset-5 {\n  margin-left: 41.66666667%; }\n\n.hwrld-widget .col-xs-offset-4 {\n  margin-left: 33.33333333%; }\n\n.hwrld-widget .col-xs-offset-3 {\n  margin-left: 25%; }\n\n.hwrld-widget .col-xs-offset-2 {\n  margin-left: 16.66666667%; }\n\n.hwrld-widget .col-xs-offset-1 {\n  margin-left: 8.33333333%; }\n\n.hwrld-widget .col-xs-offset-0 {\n  margin-left: 0%; }\n\n@media (min-width: 670px) {\n  .hwrld-widget .col-sm-1, .hwrld-widget .col-sm-2, .hwrld-widget .col-sm-3, .hwrld-widget .col-sm-4, .hwrld-widget .col-sm-5, .hwrld-widget .col-sm-6, .hwrld-widget .col-sm-7, .hwrld-widget .col-sm-8, .hwrld-widget .col-sm-9, .hwrld-widget .col-sm-10, .hwrld-widget .col-sm-11, .hwrld-widget .col-sm-12 {\n    float: left; }\n  .hwrld-widget .col-sm-12 {\n    width: 100%; }\n  .hwrld-widget .col-sm-11 {\n    width: 91.66666667%; }\n  .hwrld-widget .col-sm-10 {\n    width: 83.33333333%; }\n  .hwrld-widget .col-sm-9 {\n    width: 75%; }\n  .hwrld-widget .col-sm-8 {\n    width: 66.66666667%; }\n  .hwrld-widget .col-sm-7 {\n    width: 58.33333333%; }\n  .hwrld-widget .col-sm-6 {\n    width: 50%; }\n  .hwrld-widget .col-sm-5 {\n    width: 41.66666667%; }\n  .hwrld-widget .col-sm-4 {\n    width: 33.33333333%; }\n  .hwrld-widget .col-sm-3 {\n    width: 25%; }\n  .hwrld-widget .col-sm-2 {\n    width: 16.66666667%; }\n  .hwrld-widget .col-sm-1 {\n    width: 8.33333333%; }\n  .hwrld-widget .col-sm-pull-12 {\n    right: 100%; }\n  .hwrld-widget .col-sm-pull-11 {\n    right: 91.66666667%; }\n  .hwrld-widget .col-sm-pull-10 {\n    right: 83.33333333%; }\n  .hwrld-widget .col-sm-pull-9 {\n    right: 75%; }\n  .hwrld-widget .col-sm-pull-8 {\n    right: 66.66666667%; }\n  .hwrld-widget .col-sm-pull-7 {\n    right: 58.33333333%; }\n  .hwrld-widget .col-sm-pull-6 {\n    right: 50%; }\n  .hwrld-widget .col-sm-pull-5 {\n    right: 41.66666667%; }\n  .hwrld-widget .col-sm-pull-4 {\n    right: 33.33333333%; }\n  .hwrld-widget .col-sm-pull-3 {\n    right: 25%; }\n  .hwrld-widget .col-sm-pull-2 {\n    right: 16.66666667%; }\n  .hwrld-widget .col-sm-pull-1 {\n    right: 8.33333333%; }\n  .hwrld-widget .col-sm-pull-0 {\n    right: auto; }\n  .hwrld-widget .col-sm-push-12 {\n    left: 100%; }\n  .hwrld-widget .col-sm-push-11 {\n    left: 91.66666667%; }\n  .hwrld-widget .col-sm-push-10 {\n    left: 83.33333333%; }\n  .hwrld-widget .col-sm-push-9 {\n    left: 75%; }\n  .hwrld-widget .col-sm-push-8 {\n    left: 66.66666667%; }\n  .hwrld-widget .col-sm-push-7 {\n    left: 58.33333333%; }\n  .hwrld-widget .col-sm-push-6 {\n    left: 50%; }\n  .hwrld-widget .col-sm-push-5 {\n    left: 41.66666667%; }\n  .hwrld-widget .col-sm-push-4 {\n    left: 33.33333333%; }\n  .hwrld-widget .col-sm-push-3 {\n    left: 25%; }\n  .hwrld-widget .col-sm-push-2 {\n    left: 16.66666667%; }\n  .hwrld-widget .col-sm-push-1 {\n    left: 8.33333333%; }\n  .hwrld-widget .col-sm-push-0 {\n    left: auto; }\n  .hwrld-widget .col-sm-offset-12 {\n    margin-left: 100%; }\n  .hwrld-widget .col-sm-offset-11 {\n    margin-left: 91.66666667%; }\n  .hwrld-widget .col-sm-offset-10 {\n    margin-left: 83.33333333%; }\n  .hwrld-widget .col-sm-offset-9 {\n    margin-left: 75%; }\n  .hwrld-widget .col-sm-offset-8 {\n    margin-left: 66.66666667%; }\n  .hwrld-widget .col-sm-offset-7 {\n    margin-left: 58.33333333%; }\n  .hwrld-widget .col-sm-offset-6 {\n    margin-left: 50%; }\n  .hwrld-widget .col-sm-offset-5 {\n    margin-left: 41.66666667%; }\n  .hwrld-widget .col-sm-offset-4 {\n    margin-left: 33.33333333%; }\n  .hwrld-widget .col-sm-offset-3 {\n    margin-left: 25%; }\n  .hwrld-widget .col-sm-offset-2 {\n    margin-left: 16.66666667%; }\n  .hwrld-widget .col-sm-offset-1 {\n    margin-left: 8.33333333%; }\n  .hwrld-widget .col-sm-offset-0 {\n    margin-left: 0%; } }\n\n@media (min-width: 786px) {\n  .hwrld-widget .col-md-1, .hwrld-widget .col-md-2, .hwrld-widget .col-md-3, .hwrld-widget .col-md-4, .hwrld-widget .col-md-5, .hwrld-widget .col-md-6, .hwrld-widget .col-md-7, .hwrld-widget .col-md-8, .hwrld-widget .col-md-9, .hwrld-widget .col-md-10, .hwrld-widget .col-md-11, .hwrld-widget .col-md-12 {\n    float: left; }\n  .hwrld-widget .col-md-12 {\n    width: 100%; }\n  .hwrld-widget .col-md-11 {\n    width: 91.66666667%; }\n  .hwrld-widget .col-md-10 {\n    width: 83.33333333%; }\n  .hwrld-widget .col-md-9 {\n    width: 75%; }\n  .hwrld-widget .col-md-8 {\n    width: 66.66666667%; }\n  .hwrld-widget .col-md-7 {\n    width: 58.33333333%; }\n  .hwrld-widget .col-md-6 {\n    width: 50%; }\n  .hwrld-widget .col-md-5 {\n    width: 41.66666667%; }\n  .hwrld-widget .col-md-4 {\n    width: 33.33333333%; }\n  .hwrld-widget .col-md-3 {\n    width: 25%; }\n  .hwrld-widget .col-md-2 {\n    width: 16.66666667%; }\n  .hwrld-widget .col-md-1 {\n    width: 8.33333333%; }\n  .hwrld-widget .col-md-pull-12 {\n    right: 100%; }\n  .hwrld-widget .col-md-pull-11 {\n    right: 91.66666667%; }\n  .hwrld-widget .col-md-pull-10 {\n    right: 83.33333333%; }\n  .hwrld-widget .col-md-pull-9 {\n    right: 75%; }\n  .hwrld-widget .col-md-pull-8 {\n    right: 66.66666667%; }\n  .hwrld-widget .col-md-pull-7 {\n    right: 58.33333333%; }\n  .hwrld-widget .col-md-pull-6 {\n    right: 50%; }\n  .hwrld-widget .col-md-pull-5 {\n    right: 41.66666667%; }\n  .hwrld-widget .col-md-pull-4 {\n    right: 33.33333333%; }\n  .hwrld-widget .col-md-pull-3 {\n    right: 25%; }\n  .hwrld-widget .col-md-pull-2 {\n    right: 16.66666667%; }\n  .hwrld-widget .col-md-pull-1 {\n    right: 8.33333333%; }\n  .hwrld-widget .col-md-pull-0 {\n    right: auto; }\n  .hwrld-widget .col-md-push-12 {\n    left: 100%; }\n  .hwrld-widget .col-md-push-11 {\n    left: 91.66666667%; }\n  .hwrld-widget .col-md-push-10 {\n    left: 83.33333333%; }\n  .hwrld-widget .col-md-push-9 {\n    left: 75%; }\n  .hwrld-widget .col-md-push-8 {\n    left: 66.66666667%; }\n  .hwrld-widget .col-md-push-7 {\n    left: 58.33333333%; }\n  .hwrld-widget .col-md-push-6 {\n    left: 50%; }\n  .hwrld-widget .col-md-push-5 {\n    left: 41.66666667%; }\n  .hwrld-widget .col-md-push-4 {\n    left: 33.33333333%; }\n  .hwrld-widget .col-md-push-3 {\n    left: 25%; }\n  .hwrld-widget .col-md-push-2 {\n    left: 16.66666667%; }\n  .hwrld-widget .col-md-push-1 {\n    left: 8.33333333%; }\n  .hwrld-widget .col-md-push-0 {\n    left: auto; }\n  .hwrld-widget .col-md-offset-12 {\n    margin-left: 100%; }\n  .hwrld-widget .col-md-offset-11 {\n    margin-left: 91.66666667%; }\n  .hwrld-widget .col-md-offset-10 {\n    margin-left: 83.33333333%; }\n  .hwrld-widget .col-md-offset-9 {\n    margin-left: 75%; }\n  .hwrld-widget .col-md-offset-8 {\n    margin-left: 66.66666667%; }\n  .hwrld-widget .col-md-offset-7 {\n    margin-left: 58.33333333%; }\n  .hwrld-widget .col-md-offset-6 {\n    margin-left: 50%; }\n  .hwrld-widget .col-md-offset-5 {\n    margin-left: 41.66666667%; }\n  .hwrld-widget .col-md-offset-4 {\n    margin-left: 33.33333333%; }\n  .hwrld-widget .col-md-offset-3 {\n    margin-left: 25%; }\n  .hwrld-widget .col-md-offset-2 {\n    margin-left: 16.66666667%; }\n  .hwrld-widget .col-md-offset-1 {\n    margin-left: 8.33333333%; }\n  .hwrld-widget .col-md-offset-0 {\n    margin-left: 0%; } }\n\n@media (min-width: 978px) {\n  .hwrld-widget .col-lg-1, .hwrld-widget .col-lg-2, .hwrld-widget .col-lg-3, .hwrld-widget .col-lg-4, .hwrld-widget .col-lg-5, .hwrld-widget .col-lg-6, .hwrld-widget .col-lg-7, .hwrld-widget .col-lg-8, .hwrld-widget .col-lg-9, .hwrld-widget .col-lg-10, .hwrld-widget .col-lg-11, .hwrld-widget .col-lg-12 {\n    float: left; }\n  .hwrld-widget .col-lg-12 {\n    width: 100%; }\n  .hwrld-widget .col-lg-11 {\n    width: 91.66666667%; }\n  .hwrld-widget .col-lg-10 {\n    width: 83.33333333%; }\n  .hwrld-widget .col-lg-9 {\n    width: 75%; }\n  .hwrld-widget .col-lg-8 {\n    width: 66.66666667%; }\n  .hwrld-widget .col-lg-7 {\n    width: 58.33333333%; }\n  .hwrld-widget .col-lg-6 {\n    width: 50%; }\n  .hwrld-widget .col-lg-5 {\n    width: 41.66666667%; }\n  .hwrld-widget .col-lg-4 {\n    width: 33.33333333%; }\n  .hwrld-widget .col-lg-3 {\n    width: 25%; }\n  .hwrld-widget .col-lg-2 {\n    width: 16.66666667%; }\n  .hwrld-widget .col-lg-1 {\n    width: 8.33333333%; }\n  .hwrld-widget .col-lg-pull-12 {\n    right: 100%; }\n  .hwrld-widget .col-lg-pull-11 {\n    right: 91.66666667%; }\n  .hwrld-widget .col-lg-pull-10 {\n    right: 83.33333333%; }\n  .hwrld-widget .col-lg-pull-9 {\n    right: 75%; }\n  .hwrld-widget .col-lg-pull-8 {\n    right: 66.66666667%; }\n  .hwrld-widget .col-lg-pull-7 {\n    right: 58.33333333%; }\n  .hwrld-widget .col-lg-pull-6 {\n    right: 50%; }\n  .hwrld-widget .col-lg-pull-5 {\n    right: 41.66666667%; }\n  .hwrld-widget .col-lg-pull-4 {\n    right: 33.33333333%; }\n  .hwrld-widget .col-lg-pull-3 {\n    right: 25%; }\n  .hwrld-widget .col-lg-pull-2 {\n    right: 16.66666667%; }\n  .hwrld-widget .col-lg-pull-1 {\n    right: 8.33333333%; }\n  .hwrld-widget .col-lg-pull-0 {\n    right: auto; }\n  .hwrld-widget .col-lg-push-12 {\n    left: 100%; }\n  .hwrld-widget .col-lg-push-11 {\n    left: 91.66666667%; }\n  .hwrld-widget .col-lg-push-10 {\n    left: 83.33333333%; }\n  .hwrld-widget .col-lg-push-9 {\n    left: 75%; }\n  .hwrld-widget .col-lg-push-8 {\n    left: 66.66666667%; }\n  .hwrld-widget .col-lg-push-7 {\n    left: 58.33333333%; }\n  .hwrld-widget .col-lg-push-6 {\n    left: 50%; }\n  .hwrld-widget .col-lg-push-5 {\n    left: 41.66666667%; }\n  .hwrld-widget .col-lg-push-4 {\n    left: 33.33333333%; }\n  .hwrld-widget .col-lg-push-3 {\n    left: 25%; }\n  .hwrld-widget .col-lg-push-2 {\n    left: 16.66666667%; }\n  .hwrld-widget .col-lg-push-1 {\n    left: 8.33333333%; }\n  .hwrld-widget .col-lg-push-0 {\n    left: auto; }\n  .hwrld-widget .col-lg-offset-12 {\n    margin-left: 100%; }\n  .hwrld-widget .col-lg-offset-11 {\n    margin-left: 91.66666667%; }\n  .hwrld-widget .col-lg-offset-10 {\n    margin-left: 83.33333333%; }\n  .hwrld-widget .col-lg-offset-9 {\n    margin-left: 75%; }\n  .hwrld-widget .col-lg-offset-8 {\n    margin-left: 66.66666667%; }\n  .hwrld-widget .col-lg-offset-7 {\n    margin-left: 58.33333333%; }\n  .hwrld-widget .col-lg-offset-6 {\n    margin-left: 50%; }\n  .hwrld-widget .col-lg-offset-5 {\n    margin-left: 41.66666667%; }\n  .hwrld-widget .col-lg-offset-4 {\n    margin-left: 33.33333333%; }\n  .hwrld-widget .col-lg-offset-3 {\n    margin-left: 25%; }\n  .hwrld-widget .col-lg-offset-2 {\n    margin-left: 16.66666667%; }\n  .hwrld-widget .col-lg-offset-1 {\n    margin-left: 8.33333333%; }\n  .hwrld-widget .col-lg-offset-0 {\n    margin-left: 0%; } }\n\n.hwrld-widget .clearfix:before,\n.hwrld-widget .clearfix:after,\n.hwrld-widget .container:before,\n.hwrld-widget .container:after,\n.hwrld-widget .container-fluid:before,\n.hwrld-widget .container-fluid:after,\n.hwrld-widget .row:before,\n.hwrld-widget .row:after {\n  content: \" \";\n  display: table; }\n\n.hwrld-widget .clearfix:after,\n.hwrld-widget .container:after,\n.hwrld-widget .container-fluid:after,\n.hwrld-widget .row:after {\n  clear: both; }\n\n.hwrld-widget .center-block {\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n\n.hwrld-widget .pull-right {\n  float: right !important; }\n\n.hwrld-widget .pull-left {\n  float: left !important; }\n\n.hwrld-widget .hide {\n  display: none !important; }\n\n.hwrld-widget .show {\n  display: block !important; }\n\n.hwrld-widget .invisible {\n  visibility: hidden; }\n\n.hwrld-widget .text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0; }\n\n.hwrld-widget .hidden {\n  display: none !important; }\n\n.hwrld-widget .affix {\n  position: fixed; }\n\n.hwrld-widget {\n  color: #757575;\n  font-family: arial;\n  font-size: 13px; }\n", ""]);
+
+	// exports
+
 
 /***/ }
 ]);
