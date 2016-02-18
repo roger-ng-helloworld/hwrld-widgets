@@ -1,13 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('widgets-core.js');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('hwrld-core-widget.js');
+var providePlugin = new webpack.ProvidePlugin({
+	'Promise': 'es6-promise',
+    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+  })
 
 module.exports = {
 	context: path.resolve('js'),
 	entry: {
-		'grocery-list-widget': './grocery-list-app',
-		'activities-widget': './activities-app'
+		'hwrld-activities-widget': './hwrld-activities-widget'
 	},
 	output: {
 		path: path.resolve('public/'),

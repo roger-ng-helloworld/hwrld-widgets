@@ -4,11 +4,16 @@
 	<title>Index</title>
 </head>
 <body>
-	<div id="grocery-list"></div>
-	<div id="activities"></div>
+	<p>The quick brown fox</p>
 
-	<script src="widgets-core.js"></script>
-	<script src="grocery-list-widget.js"></script>
-	<script src="activities-widget.js"></script>
+	<div id="js-activities"></div>
+
+	<script src="hwrld-core-widget.js"></script>
+	<script src="hwrld-activities-widget.js"></script>
+	<script>
+		new HwrldActivitiesWidget('js-activities', {
+			dest: 'sydney'
+		})
+	</script>
 </body>
 </html>
