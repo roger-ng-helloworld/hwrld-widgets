@@ -1,9 +1,11 @@
 @import 'variables';
 
 .hwrld-widget {
+	background-color: #ffffff;
+	max-width: $break-large; 
+
 	.list {
 		border-top: 1px dotted $color-text;
-		max-width: $break-large; 
 	}
 
 	.list-item {
@@ -14,17 +16,20 @@
 	}
 
 	.cta {
-		background-color: rgba(0,0,0,0.2);
-		display: none;
+		background-color: transparent;
 		height: 100%;
+		margin-top: -20px;
 		position: absolute;
 		width: 100%;
 		z-index: 100;
 	}
 
-	.img-container {
+	.img-panel {
 		height: 90px;
 		overflow: hidden;
+		max-width: 200px;
+		width: 100%;
+
 	}
 
 	.title {
@@ -33,9 +38,66 @@
 		font-weight: bold;
 	}
 
+	.stars {
+		height: 12px;
+	}
+
 	.blurb {
 		height: 32px;
 		margin-top: 5px;
 		overflow: hidden;
+	}
+
+	.arrow-panel {
+		float: right;
+		i {
+			background: url(http://cdnimagestorage.blob.core.windows.net/cdn/icons.png) -4px -4px no-repeat;
+			display: block;
+			height: 23px;
+			margin: 20px 0 0 4px;
+			width: 23px;
+		}
+	}
+
+	.price-container {
+		padding-top: 25px;
+	}	
+
+	.price-panel {
+		float: right;
+	}
+
+	.price {
+		color: $color-secondary;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: right;
+	}
+
+	.top-aggregator, .bottom-aggregator {
+		text-align: right;
+		text-transform: uppercase;
+
+	}
+
+	a.see-more {
+		border: 2px solid $color-secondary;
+		border-radius: 4px;
+		color: $color-secondary;
+		display: table;
+		font-weight: bold;
+		margin: 20px auto 0;
+		padding: 10px 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	
+}
+
+@media (max-width: $break-small - 1px) {
+	.hwrld-widget {
+		.title {
+			margin-top: 5px;
+		}
 	}
 }

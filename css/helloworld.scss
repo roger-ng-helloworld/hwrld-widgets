@@ -1,5 +1,12 @@
 :global(.hwrld-widget) {
 	color: $color-text;
 	font-family: arial;
-	font-size: 13px
+	font-size: 13px;
+
+	a:link, a:visited, a:hover, a:active, a:focus {
+		color: $color-text;
+		font-family: arial;
+		font-size: 13px;
+		text-decoration: none;
+	}
 }
