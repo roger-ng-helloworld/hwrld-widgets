@@ -75,7 +75,7 @@ class HwrldActivitiesWidget {
 	}
 
 	renderElm() {
-		ReactDom.render(<Activities deals={this.deals} />, document.getElementById(this.element));
+		ReactDom.render(<Activities deals={this.deals} />, document.querySelector(this.element));
 	}
 }
 

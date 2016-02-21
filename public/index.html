@@ -6,14 +6,27 @@
 <body>
 	<h1>Helloworld Widgets</h1>
 
-	<div id="js-activities"></div>
+	<div class="js-weather"></div>
+
+	<div class="js-activities"></div>
+
+	
 
 	<script src="hwrld-core-widget.js"></script>
+	
+	<script src="hwrld-chart-widget.js"></script>
+	<script>
+		new HwrldChartWidget('.js-weather', {
+			content: 'weather'
+		})
+	</script>
+
 	<script src="hwrld-activities-widget.js"></script>
 	<script>
-		new HwrldActivitiesWidget('js-activities', {
+		new HwrldActivitiesWidget('.js-activities', {
 			dest: 'sydney'
 		})
 	</script>
+	
 </body>
 </html>

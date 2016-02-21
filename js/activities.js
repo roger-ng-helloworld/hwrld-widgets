@@ -5,10 +5,12 @@ import css from '../css/activities.scss';
 
 @styleable(css)
 export default class Activities extends Component {
+
 	render() {
 		let self = this;
 		return (
-			<div className={'hwrld-widget ' + this.props.css['hwrld-widget']}>				
+
+			<div className={'hwrld-widget ' + this.props.css['hwrld-widget']}>			
 				<ul className={this.props.css.list + ' container-fluid'}>
 					{this.props.deals.items.map(function(val, ind){			            
 			            return (

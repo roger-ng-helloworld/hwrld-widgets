@@ -1,0 +1,15 @@
+@import 'variables';
+
+.hwrld-widget {
+	background-color: yellow;
+	max-width: $break-large; 
+	
+	
+	
+}
+
+@media (max-width: $break-small - 1px) {
+	.hwrld-widget {
+
+	}
+}
