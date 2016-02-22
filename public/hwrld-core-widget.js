@@ -12,28 +12,7 @@
 /******/ 			installedChunks[chunkId] = 0;
 /******/ 		}
 /******/ 		for(moduleId in moreModules) {
-/******/ 			var _m = moreModules[moduleId];
-
-/******/ 			// Check if module is deduplicated
-/******/ 			switch(typeof _m) {
-/******/ 			case "object":
-/******/ 				// Module can be created from a template
-/******/ 				modules[moduleId] = (function(_m) {
-/******/ 					var args = _m.slice(1), templateId = _m[0];
-/******/ 					return function (a,b,c) {
-/******/ 						modules[templateId].apply(this, [a,b,c].concat(args));
-/******/ 					};
-/******/ 				}(_m));
-/******/ 				break;
-/******/ 			case "function":
-/******/ 				// Normal module
-/******/ 				modules[moduleId] = _m;
-/******/ 				break;
-/******/ 			default:
-/******/ 				// Module is a copy of another module
-/******/ 				modules[moduleId] = modules[_m];
-/******/ 				break;
-/******/ 			}
+/******/ 			modules[moduleId] = moreModules[moduleId];
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
 /******/ 		while(callbacks.length)
@@ -112,30 +91,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/ })
 /************************************************************************/
-/******/ ((function(modules) {
-	// Check all modules for deduplicated modules
-	for(var i in modules) {
-		if(Object.prototype.hasOwnProperty.call(modules, i)) {
-			switch(typeof modules[i]) {
-			case "function": break;
-			case "object":
-				// Module can be created from a template
-				modules[i] = (function(_m) {
-					var args = _m.slice(1), fn = modules[_m[0]];
-					return function (a,b,c) {
-						fn.apply(this, [a,b,c].concat(args));
-					};
-				}(modules[i]));
-				break;
-			default:
-				// Module is a copy of another module
-				modules[i] = modules[modules[i]];
-				break;
-			}
-		}
-	}
-	return modules;
-}([
+/******/ ([
 /* 0 */,
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -21144,11 +21100,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
 
 	var Headers = undefined;
 	var Request = undefined;
@@ -21283,7 +21239,7 @@
 				(function () {
 					debug('constructing starts with string matcher for route: ' + route.name);
 					var expectedUrl = route.matcher.substr(1);
-					matchUrl = function matchUrl(url) {
+					matchUrl = function (url) {
 						return url.indexOf(expectedUrl) === 0;
 					};
 				})();
@@ -21291,7 +21247,7 @@
 				(function () {
 					debug('constructing string matcher for route: ' + route.name);
 					var expectedUrl = route.matcher;
-					matchUrl = function matchUrl(url) {
+					matchUrl = function (url) {
 						return url === expectedUrl;
 					};
 				})();
@@ -21300,7 +21256,7 @@
 			(function () {
 				debug('constructing regex matcher for route: ' + route.name);
 				var urlRX = route.matcher;
-				matchUrl = function matchUrl(url) {
+				matchUrl = function (url) {
 					return urlRX.test(url);
 				};
 			})();
@@ -21314,7 +21270,7 @@
 		return route;
 	}
 
-	var FetchMock = function () {
+	var FetchMock = (function () {
 		/**
 	  * constructor
 	  * Sets up scoped references to configuration passed in from client/server bootstrappers
@@ -21343,7 +21299,6 @@
 	  * Sets fetchMock's default internal reference to native fetch to the given function
 	  * @param  {Function} func
 	  */
-
 
 		_createClass(FetchMock, [{
 			key: 'useNonGlobalFetch',
@@ -21635,7 +21590,7 @@
 		}]);
 
 		return FetchMock;
-	}();
+	})();
 
 	module.exports = FetchMock;
 
@@ -22181,4 +22136,4 @@
 
 
 /***/ }
-/******/ ])));
+/******/ ]);

@@ -8,25 +8,46 @@
 
 	<div class="js-weather"></div>
 
+	<div style="height: 20px; width: 100%;"></div>
+
+	<div class="js-price"></div>
+
+	<div style="height: 20px; width: 100%;"></div>
+
+	<div class="js-popularity"></div>
+
+	<div style="height: 20px; width: 100%;"></div>
+
 	<div class="js-activities"></div>
 
 	
 
 	<script src="hwrld-core-widget.js"></script>
-	
 	<script src="hwrld-chart-widget.js"></script>
+	<script src="hwrld-activities-widget.js"></script>
+
 	<script>
 		new HwrldChartWidget('.js-weather', {
-			content: 'weather'
+			content: 'weather',
+			dest: 'sydney'
 		})
-	</script>
 
-	<script src="hwrld-activities-widget.js"></script>
-	<script>
+		new HwrldChartWidget('.js-price', {
+			content: 'price',
+			dest: 'sydney'
+		})
+
+		new HwrldChartWidget('.js-popularity', {
+			content: 'popularity',
+			dest: 'sydney'
+		})
+
 		new HwrldActivitiesWidget('.js-activities', {
 			dest: 'sydney'
 		})
 	</script>
+
+	
 	
 </body>
 </html>

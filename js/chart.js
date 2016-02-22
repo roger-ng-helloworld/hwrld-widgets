@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { VictoryChart } from 'victory';
-import { VictoryAxis } from 'victory';
-import { VictoryLine } from 'victory';   
+import ChartistGraph from 'react-chartist';
 import styleable from 'react-styleable';
 import coreStyles from '../css/core-widget.scss';
 import css from '../css/chart.scss';
@@ -10,35 +8,71 @@ import css from '../css/chart.scss';
 export default class Chart extends Component {
 
 	render() {
-		
+    const offset = {
+      weather: {
+        min: 2,
+        max: 1
+      },
+      price: {
+        min: 20,
+        max: 10
+      },
+      popularity: {
+        min: 2,
+        max: 1
+      },
+    }
+
+    var chartData = {
+      labels: this.props.chart.items.map((val) => new Date(val.x).toDateString().substring(4,7).toUpperCase()),
+      series: [
+        this.props.chart.items.map((val) => val.y)
+      ]
+    };
+
+    var chartOptions = {
+      high: Math.max(...this.props.chart.items.map((val) => val.y)) + offset[this.props.options.content].max,
+      low: Math.min(...this.props.chart.items.map((val) => val.y)) - offset[this.props.options.content].min,
+      showArea: true,
+      showLine: true,
+      showPoint: true,
+      fullWidth: true,
+      axisX: {
+        labelInterpolationFnc: function(value, index) {
+          return index % 2 === 0 ? value : '';
+        }
+      },
+      axisY: {
+        showLabel: false,
+        offset: 30
+      },
+      chartPadding: {
+        top: 40,
+        right: 0,
+        bottom: 0,
+        left: 0
+      },
+
+      lineSmooth: false,
+      height: 160
+
+    };
+
+    var chartType = 'Line'
+
 		return (
-			<VictoryChart
-  height={450}
-  scale={{
-    x: "time"
-  }}>
-  <VictoryAxis
-    label="Decades"
-    tickValues={[
-      new Date(1980, 1, 1),
-      new Date(2000, 1, 1),
-      new Date(2020, 1, 1),
-    ]}
-    tickFormat={(x) => x.getFullYear()}/>
-  <VictoryLine
-    data={[
-      {x: new Date(1982, 1, 1), y: 125},
-      {x: new Date(1987, 1, 1), y: 257},
-      {x: new Date(1993, 1, 1), y: 345},
-      {x: new Date(1997, 1, 1), y: 515},
-      {x: new Date(2001, 1, 1), y: 132},
-      {x: new Date(2005, 1, 1), y: 305},
-      {x: new Date(2011, 1, 1), y: 270},
-      {x: new Date(2015, 1, 1), y: 470},
-      {x: new Date(2015, 1, 1), y: 125}
-    ]}/>
-</VictoryChart>
-			
+      <div className={'hwrld-widget ' + this.props.css['hwrld-widget'] + ' ' + this.props.css[this.props.options.content] }>
+
+        <div className={this.props.css.title}>{this.props.options.content}
+        </div>
+
+        <div className={this.props.css['y-axis']}>
+        </div>   
+
+        <ChartistGraph data={chartData} options={chartOptions} type={chartType} />
+      </div>
+
+     		
 		);
 	}
 }

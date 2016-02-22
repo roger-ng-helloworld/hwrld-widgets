@@ -84,7 +84,11 @@ webpackJsonp([0],{
 
 			this.element = element;
 			this.options = options;
-			this.getData();
+			if (this.options.dataSource === 'local') {
+				this.deals = window.hwrldActivitiesData;
+			} else {
+				this.getData();
+			}
 		}
 
 		_createClass(HwrldActivitiesWidget, [{
@@ -297,25 +301,25 @@ webpackJsonp([0],{
 
 
 	// module
-	exports.push([module.id, ".hwrld-widget---38y5N {\n  background-color: #ffffff;\n  max-width: 978px; }\n  .hwrld-widget---38y5N .list---2XMRf {\n    border-top: 1px dotted #757575; }\n  .hwrld-widget---38y5N .list-item---1wafT {\n    border-bottom: 1px dotted #757575;\n    padding: 20px 0;\n    position: relative; }\n  .hwrld-widget---38y5N .cta---2Yd0p {\n    background-color: transparent;\n    height: 100%;\n    margin-top: -20px;\n    position: absolute;\n    width: 100%;\n    z-index: 100; }\n  .hwrld-widget---38y5N .img-panel---3Q_Z9 {\n    height: 90px;\n    overflow: hidden;\n    max-width: 200px;\n    width: 100%; }\n  .hwrld-widget---38y5N .title---2lov8 {\n    color: #00BCE4;\n    font-size: 18px;\n    font-weight: bold; }\n  .hwrld-widget---38y5N .stars---k54oV {\n    height: 12px; }\n  .hwrld-widget---38y5N .blurb---OABiU {\n    height: 32px;\n    margin-top: 5px;\n    overflow: hidden; }\n  .hwrld-widget---38y5N .arrow-panel---13Dkz {\n    float: right; }\n    .hwrld-widget---38y5N .arrow-panel---13Dkz i {\n      background: url(http://cdnimagestorage.blob.core.windows.net/cdn/icons.png) -4px -4px no-repeat;\n      display: block;\n      height: 23px;\n      margin: 20px 0 0 4px;\n      width: 23px; }\n  .hwrld-widget---38y5N .price-container---265L9 {\n    padding-top: 25px; }\n  .hwrld-widget---38y5N .price-panel---31Yxg {\n    float: right; }\n  .hwrld-widget---38y5N .price---3gvTZ {\n    color: #F58227;\n    font-size: 30px;\n    font-weight: bold;\n    text-align: right; }\n  .hwrld-widget---38y5N .top-aggregator---1NDg4, .hwrld-widget---38y5N .bottom-aggregator---3C5zJ {\n    text-align: right;\n    text-transform: uppercase; }\n  .hwrld-widget---38y5N a.see-more---1Zy0w {\n    border: 2px solid #F58227;\n    border-radius: 4px;\n    color: #F58227;\n    display: table;\n    font-weight: bold;\n    margin: 20px auto 0;\n    padding: 10px 20px;\n    text-decoration: none;\n    text-transform: uppercase; }\n\n@media (max-width: 669px) {\n  .hwrld-widget---38y5N .title---2lov8 {\n    margin-top: 5px; } }\n", ""]);
+	exports.push([module.id, ".hwrld-widget---RJDJq {\n  background-color: #ffffff;\n  max-width: 978px; }\n  .hwrld-widget---RJDJq .list---1coFx {\n    border-top: 1px dotted #757575; }\n  .hwrld-widget---RJDJq .list-item---2lzgb {\n    border-bottom: 1px dotted #757575;\n    padding: 20px 0;\n    position: relative; }\n  .hwrld-widget---RJDJq .cta---XEERS {\n    background-color: transparent;\n    height: 100%;\n    margin-top: -20px;\n    position: absolute;\n    width: 100%;\n    z-index: 100; }\n  .hwrld-widget---RJDJq .img-panel---2B5C0 {\n    height: 90px;\n    overflow: hidden;\n    max-width: 200px;\n    width: 100%; }\n  .hwrld-widget---RJDJq .title---uGPI4 {\n    color: #00BCE4;\n    font-size: 18px;\n    font-weight: bold; }\n  .hwrld-widget---RJDJq .stars---2rwhU {\n    height: 12px; }\n  .hwrld-widget---RJDJq .blurb---1JFU1 {\n    height: 32px;\n    margin-top: 5px;\n    overflow: hidden; }\n  .hwrld-widget---RJDJq .arrow-panel---ym8JO {\n    float: right; }\n    .hwrld-widget---RJDJq .arrow-panel---ym8JO i {\n      background: url(http://cdnimagestorage.blob.core.windows.net/cdn/icons.png) -4px -4px no-repeat;\n      display: block;\n      height: 23px;\n      margin: 20px 0 0 4px;\n      width: 23px; }\n  .hwrld-widget---RJDJq .price-container---2fWB3 {\n    padding-top: 25px; }\n  .hwrld-widget---RJDJq .price-panel---1YtwC {\n    float: right; }\n  .hwrld-widget---RJDJq .price---xwXg9 {\n    color: #F58227;\n    font-size: 30px;\n    font-weight: bold;\n    text-align: right; }\n  .hwrld-widget---RJDJq .top-aggregator---1avOv, .hwrld-widget---RJDJq .bottom-aggregator---2G5ax {\n    text-align: right;\n    text-transform: uppercase; }\n  .hwrld-widget---RJDJq a.see-more---1Uwt- {\n    border: 2px solid #F58227;\n    border-radius: 4px;\n    color: #F58227;\n    display: table;\n    font-weight: bold;\n    margin: 20px auto 0;\n    padding: 10px 20px;\n    text-decoration: none;\n    text-transform: uppercase; }\n\n@media (max-width: 669px) {\n  .hwrld-widget---RJDJq .title---uGPI4 {\n    margin-top: 5px; } }\n", ""]);
 
 	// exports
 	exports.locals = {
-		"hwrld-widget": "hwrld-widget---38y5N",
-		"list": "list---2XMRf",
-		"list-item": "list-item---1wafT",
-		"cta": "cta---2Yd0p",
-		"img-panel": "img-panel---3Q_Z9",
-		"title": "title---2lov8",
-		"stars": "stars---k54oV",
-		"blurb": "blurb---OABiU",
-		"arrow-panel": "arrow-panel---13Dkz",
-		"price-container": "price-container---265L9",
-		"price-panel": "price-panel---31Yxg",
-		"price": "price---3gvTZ",
-		"top-aggregator": "top-aggregator---1NDg4",
-		"bottom-aggregator": "bottom-aggregator---3C5zJ",
-		"see-more": "see-more---1Zy0w"
+		"hwrld-widget": "hwrld-widget---RJDJq",
+		"list": "list---1coFx",
+		"list-item": "list-item---2lzgb",
+		"cta": "cta---XEERS",
+		"img-panel": "img-panel---2B5C0",
+		"title": "title---uGPI4",
+		"stars": "stars---2rwhU",
+		"blurb": "blurb---1JFU1",
+		"arrow-panel": "arrow-panel---ym8JO",
+		"price-container": "price-container---2fWB3",
+		"price-panel": "price-panel---1YtwC",
+		"price": "price---xwXg9",
+		"top-aggregator": "top-aggregator---1avOv",
+		"bottom-aggregator": "bottom-aggregator---2G5ax",
+		"see-more": "see-more---1Uwt-"
 	};
 
 /***/ }

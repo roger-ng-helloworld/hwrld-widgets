@@ -56,7 +56,12 @@ class HwrldActivitiesWidget {
 	constructor(element, options) {
 		this.element = element;
 		this.options = options;
-		this.getData();
+		if (this.options.dataSource === 'local') {
+			this.deals = window.hwrldActivitiesData;
+		}
+		else {
+			this.getData();
+		}		
 	}
 
 	getData() {
